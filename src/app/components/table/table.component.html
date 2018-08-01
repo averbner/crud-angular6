@@ -1,0 +1,23 @@
+<div class="container animated fadeIn fast">
+  <table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Name</th>
+        <th scope="col">Description</th>
+        <th scope="col">Price</th>
+        <th scope="col"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let product of products">
+        <td>{{product.id}}</td>
+        <td>{{product.name}}</td>
+        <td>{{product.description}}</td>
+        <td>{{product.price}}</td>
+        <td><a class="btn btn-primary btn-sm" routerLink="/form/{{product.id}}">Edit</a>
+        &nbsp;<a class="btn btn-secondary btn-sm btn-delete" (click)="delete(product.id)">Delete</a></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
